@@ -10,6 +10,10 @@
     margin: 0 auto;
     width: 35em;
   }
+	.month_day {
+		border: 1px solid;
+		padding: 5px;
+	}
 </style>
 </head>
 <body>
@@ -18,11 +22,26 @@
 </div>
 <div id='body'>
 <h1>Welcome to towski's journal!</h1>
-<h4>January</h4>
-<ul>
-  <li><a href='/journals/20140124.html'>24th</a></li>
-  <li><a href='/journals/20140123.html'>23rd</a></li>
-</ul>
+	<table style='width:100%'>
+	<tr><td>
+		<h4 id='month_name'></h4>
+	</td>
+	<td>
+		<h4>Posts</h4>
+	</td>
+	<tr>
+	<td style="width:50%">
+		<table id='month' style='border:1px solid'>
+			<script src='/javascripts/calendar.js'></script>
+		</table>
+	</td>
+	<td style="width:50%">
+	<ul>
+		<li><a href='/serious/memento.html'>Memento</a></li>
+	</ul>
+	</td>
+	</tr>
+	</table>
 </div>
 
 <div style='position:absolute; right:10px; top: 30px; font-size:12px;'>
@@ -34,7 +53,7 @@ The latest from my camera
 
 <div style='position:absolute; bottom: 10px; font-size:12px; margin: 0 auto; width: 100%' >
 <center>
-<p>This is hosted on my very own computer running Ubuntu, with <a href='http://no-ip.com/'>No-IP</a>, port forwarding, and nginx.</p>
+<p>This is hosted on my computer running Debian, with <a href='http://no-ip.com/'>No-IP</a>, port forwarding, and nginx.</p>
 <p>I mean, how hard is it to type out a web page manually?  </p>
 <p>For my more serious writing see <a href="http://towski.us">my other website</a>. Also my favorite page on the internet is <a href='http://jimmyr.com'>this aggregate</a></p>
 <p>Contact me on twitter <a href='http://twitter.com/towski'>towski</a> or email <a href="mailto:towski@gmail.com">towski at gmail</a></p>
