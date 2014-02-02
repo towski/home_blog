@@ -23,6 +23,9 @@
 	td.today {
 		border: 1px solid magenta;
 	}
+	#thoughts li {
+		padding: 5px;
+	}
 </style>
 </head>
 <body>
@@ -40,27 +43,43 @@
 <h1>Welcome to towski's journal!</h1>
 	<table style='width:100%'>
 	<tr >
+	<td style="width:50%" valign="top">
+	<h4>Thoughts</h4>
+	<ul id='thoughts' style='list-style:none; padding:0'>
+		<li id='thought-1'>Time now goes backwards! 
+		<a id='button1' href="https://twitter.com/share" data-url="http://" class="twitter-share-button" data-text="something" data-related="towski" data-count="none" onclick="setupButton(); return false">Share</a>
+		<script>
+			var button1 = document.getElementById('button1');
+			var thought = document.getElementById('thought-1');
+			if(document.location.hostname == "localhost"){
+				button1.setAttribute('data-text', thought.innerText)
+			} else {
+				button1.setAttribute('data-text', "RT @towski " + thought.innerText)
+			}
+			function setupButton(){
+				!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+			}
+			</script>
+		</li>
+	<ul>
+	</td>
 	<td id='month_td' style="width:50%" valign="top">
 		<script src='/javascripts/calendar.js'></script>
-	</td>
-	<td style="width:50%" valign="top">
-		<h4>Posts</h4>
-	<ul>
-		<!--li><a href='/serious/memento.html'>Memento</a></li-->
-		<li><a href='/serious/there_and_back_again.html'>There and back again</a></li>
-		<li><a href='/serious/dont_die_on_me.html'>Don't Die on Me</a></li>
-	</ul>
 	</td>
 	</tr>
 	</table>
 </div>
 
-<div style='position:absolute; right:10px; top: 30px; font-size:12px;'>
-<img src='output.jpg' />
-<p>
-The latest from my camera
-<br/>
-<a href='/raw_images/'>all</a>
+<div style='position:absolute; right:10px; top: 30px; '>
+	<h4>Posts</h4>
+	<ul>
+		<!--li><a href='/serious/memento.html'>Memento</a></li-->
+		<li><a href='/serious/there_and_back_again.html'>There and back again</a></li>
+		<li><a href='/serious/dont_die_on_me.html'>Don't Die on Me</a></li>
+	</ul>
+<img src='output.jpg' style='margin-top: 40px;'/>
+<p style='font-size:12px'>
+The latest from my camera <a href='/raw_images/'>(all)</a>
 </p>
 </div>
 
@@ -68,9 +87,10 @@ The latest from my camera
 <center>
 <p>This is hosted on my computer running Debian, with <a href='http://no-ip.com/'>No-IP</a>, port forwarding, and nginx.</p>
 <p>I mean, how hard is it to type out (an ugly) web page manually?  </p>
-<p>My favorite page on the internet is <a href='http://jimmyr.com'>this aggregate</a></p>
 <p>Contact me on twitter <a href='http://twitter.com/towski'>towski</a> or email <a href="mailto:towski@gmail.com">towski at gmail</a></p>
-<p><a href='http://www.last.fm/user/towski'>last.fm</a> | <a href="https://www.facebook.com/thegreatTowski">Facebook</a> | <a href="https://www.github.com/towski">Github</a> | <a href="http://www.flickr.com/photos/towski">Flickr</a> | <a href="http://www.reddit.com/user/towski">Reddit</a></p>
+<p><a href='http://www.last.fm/user/towski'>last.fm</a> | <a href="https://www.facebook.com/thegreatTowski">Facebook</a> | <a href="https://www.github.com/towski">Github</a> | <a href="http://www.flickr.com/photos/towski">Flickr</a> | <a href="http://www.reddit.com/user/towski">Reddit</a> | 
+<a href='http://jimmyr.com'>Aggregate</a>
+</p>
 </center>
 </div>
 
